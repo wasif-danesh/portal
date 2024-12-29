@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 /*
 	Editorial by HTML5 UP
@@ -1120,7 +1120,7 @@ input[type="radio"] {
       text-rendering: auto;
       line-height: 1;
       text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
+      font-family: FontAwesome;
       font-weight: 900; }
     input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
@@ -1199,7 +1199,6 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
     font-weight: 400; }
   .icon > .label {
     display: none; }
@@ -1207,8 +1206,6 @@ input[type="radio"] + label:before {
     line-height: inherit; }
   .icon.solid:before {
     font-weight: 900; }
-  .icon.brands:before {
-    font-family: 'Font Awesome 5 Brands'; }
 
 /* Image */
 .image {
@@ -1373,7 +1370,7 @@ ul.contact {
       text-rendering: auto;
       line-height: 1;
       text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
+      font-family: FontAwesome;
       font-weight: 400; }
     ul.contact li:before {
       color: #065886;
@@ -1500,6 +1497,7 @@ button,
   cursor: pointer;
   display: inline-block;
   font-family: "Roboto Slab", serif;
+  font-family: FontAwesome;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -1892,7 +1890,7 @@ button,
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: FontAwesome;
     font-weight: 900; }
   #search form:before {
     -moz-transform: scaleX(-1);
@@ -1984,9 +1982,10 @@ button,
       text-rendering: auto;
       line-height: 1;
       text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
+      font-family: FontAwesome;
       font-weight: 900; }
     #sidebar .toggle:before {
+      font-family: FontAwesome;
       content: '\f0c9';
       font-size: 2rem;
       height: inherit;
@@ -2232,7 +2231,7 @@ button,
         text-rendering: auto;
         line-height: 1;
         text-transform: none !important;
-        font-family: 'Font Awesome 5 Free';
+        font-family: FontAwesome;
         font-weight: 900; }
       #menu ul a.opener:before, #menu ul span.opener:before {
         -moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
