@@ -87,7 +87,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: #7f888f;
+  color: #293238;
   font-family: "Open Sans", sans-serif;
   font-size: 13pt;
   font-weight: 400;
@@ -2066,6 +2066,7 @@ button,
 
 /* Header */
 #header {
+  overflow: hidden;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -2266,3 +2267,15 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+.contact-link {
+  width: 100%;
+  .contact-link > .contact-label {
+    padding-top: 10px;
+  }
+}
+
+.contact-label {
+  margin-top: 3px;
+  display: block;
+}
