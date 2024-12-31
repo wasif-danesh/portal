@@ -1,0 +1,15 @@
+/* TEAM */
+Creator: Wasif Danesh, Developer
+Site Maintainer: Wasif Danesh, Designer
+Contact: wasif.danesh@gmail.com
+
+/* TECHNOLOGY */
+Languages: HTML, CSS, JavaScript
+Frameworks: [None]
+
+/* SITE INFO */
+Last Update: 2024/12/31
+License: MIT
+
+/* COMMENT */
+Feel free to contact us if you have any questions.
