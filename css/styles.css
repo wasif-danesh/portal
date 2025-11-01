@@ -555,7 +555,16 @@ section.visible { opacity: 1; transform: translateY(0); }
 }
 .process-grid { position: relative; z-index: 1; }
 
+@media (min-width: 961px) {
+    .process-section::before { content: none; }
+}
+
 /* ---------- Forms ---------- */
+#contactForm {
+    display: grid;
+    gap: 0.9rem;
+}
+
 .form-group input,
 .form-group textarea {
     width: 100%;

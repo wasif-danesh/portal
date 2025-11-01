@@ -77,6 +77,10 @@ themeToggleButtons.forEach(button =>
     button.addEventListener('click', () => {
         const next = body.dataset.theme === 'dark' ? 'light' : 'dark';
         applyTheme(next, { save: true });
+
+        if (mobileDrawer?.classList.contains('open') && button.closest('.mobile-drawer')) {
+            closeDrawerAndRestore({ restoreFocus: false });
+        }
     })
 );
 
