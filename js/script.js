@@ -201,12 +201,15 @@ if (contactForm) {
 
         const form = e.target;
         const status = document.getElementById('formStatus');
+        const statusStates = ['is-sending', 'is-success', 'is-error'];
+        const setStatus = (state, message) => {
+            if (!status) return;
+            status.textContent = message;
+            status.classList.remove(...statusStates);
+            if (state) status.classList.add(state);
+        };
 
-        if (status) {
-            status.classList.remove('hidden');
-            status.textContent = 'Sending...';
-            status.className = 'text-sm mt-2 text-blue-400 h-5';
-        }
+        setStatus('is-sending', 'Sending…');
 
         const data = Object.fromEntries(new FormData(form).entries());
 
@@ -218,19 +221,13 @@ if (contactForm) {
             });
 
             if (res.ok) {
-                if (status) {
-                    status.textContent = '✅ Message sent successfully!';
-                    status.className = 'text-sm mt-2 text-green-400 h-5';
-                }
+                setStatus('is-success', '✅ Message sent successfully!');
                 form.reset();
             } else {
                 throw new Error('Formspree error');
             }
         } catch (error) {
-            if (status) {
-                status.textContent = '❌ Something went wrong. Please try again.';
-                status.className = 'text-sm mt-2 text-red-400 h-5';
-            }
+            setStatus('is-error', '❌ Something went wrong. Please try again.');
         }
     });
 }
