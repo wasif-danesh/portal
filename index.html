@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wasif Danesh — Intelligent Digital Solutions</title>
   <meta name="description" content="I design, develop, deploy, and support intelligent web and mobile applications — powered by AI, cloud, and secure engineering practices." />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Google Material Symbols Rounded -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body>
+<body data-theme="dark">
 <header class="site-header">
-  <div class="container nav-row">
+  <div class="container nav-row" id="top">
     <a href="#home" class="brand"><span class="brand-badge">WD</span>Wasif Danesh</a>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Primary">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -25,18 +25,28 @@
         <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-                <span class="material-symbols-rounded">light_mode</span>
-            </button>
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-label="Toggle dark and light theme"
+          >
+            <span class="material-symbols-rounded" aria-hidden="true">light_mode</span>
+          </button>
         </li>
       </ul>
     </nav>
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open navigation">
+      <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+    </button>
   </div>
 </header>
 
-<div class="mobile-drawer" id="mobileDrawer">
-  <button class="close-btn" id="closeDrawer">×</button>
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="close-btn" id="closeDrawer" aria-label="Close navigation">
+    <span class="material-symbols-rounded" aria-hidden="true">close</span>
+  </button>
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#services">Services</a>
@@ -44,8 +54,20 @@
   <a href="#expertise">Expertise</a>
   <a href="#process">Process</a>
   <a href="#contact">Contact</a>
+  <div class="drawer-footer">
+    <button
+      class="theme-toggle"
+      type="button"
+      data-theme-toggle
+      aria-label="Toggle dark and light theme"
+    >
+      <span class="material-symbols-rounded" aria-hidden="true">light_mode</span>
+      <span class="theme-toggle__label">Light theme</span>
+    </button>
+  </div>
 </div>
 
+<main>
 <section id="home" class="hero container">
     <div class="hero-content">
         <p class="hero-tagline">AI • Cloud • Security • Web • Mobile App</p>
@@ -57,7 +79,7 @@
         </div>
     </div>
     <div class="hero-media">
-        <img src="media/hero-ai.png" alt="AI and Cloud Concept" />
+        <img src="media/hero-ai.png" alt="AI and Cloud Concept" decoding="async" />
     </div>
 </section>
 
@@ -188,7 +210,7 @@
              data-title="AI Dashboard"
              data-description="Next.js dashboard integrating AI assistants and real-time analytics widgets."
              data-image="media/hero-ai.png">
-            <img src="media/p-ai-dashboard.webp" alt="AI Dashboard Preview">
+            <img src="media/p-ai-dashboard.webp" alt="AI Dashboard Preview" loading="lazy" decoding="async">
             <h3>AI Dashboard</h3>
             <p>AI + Analytics + Next.js</p>
         </div>
@@ -198,7 +220,7 @@
              data-title="Mobile Wellness App"
              data-description="Flutter app with offline-first sync, charts, and personalized recommendations."
              data-image="media/hero-ai.png">
-            <img src="media/p-cloud-automation.webp" alt="Wellness App Preview">
+            <img src="media/p-cloud-automation.webp" alt="Wellness App Preview" loading="lazy" decoding="async">
             <h3>Wellness App</h3>
             <p>Flutter + Firebase</p>
         </div>
@@ -208,7 +230,7 @@
              data-title="Cloud Automation Portal"
              data-description="Automation dashboard for hybrid cloud deployments with Kubernetes & Docker."
              data-image="media/hero-ai.png">
-            <img src="media/p-wellness-app.webp" alt="Cloud Portal Preview">
+            <img src="media/p-wellness-app.webp" alt="Cloud Portal Preview" loading="lazy" decoding="async">
             <h3>Cloud Portal</h3>
             <p>DevOps + Cloud + Automation</p>
         </div>
@@ -408,24 +430,25 @@
                 </li>
             </ul>
             <div class="social-links">
-                <a href="https://linkedin.com/in/wasifdanesh" target="_blank"><span class="material-symbols-rounded">share</span></a>
-                <a href="https://github.com/WasifDanesh" target="_blank"><span class="material-symbols-rounded">code</span></a>
-                <a href="https://freelancer.com" target="_blank"><span class="material-symbols-rounded">business_center</span></a>
+                <a href="https://linkedin.com/in/wasifdanesh" target="_blank" rel="noopener"><span class="material-symbols-rounded">share</span></a>
+                <a href="https://github.com/WasifDanesh" target="_blank" rel="noopener"><span class="material-symbols-rounded">code</span></a>
+                <a href="https://freelancer.com" target="_blank" rel="noopener"><span class="material-symbols-rounded">business_center</span></a>
             </div>
         </div>
 
     </div>
 </section>
 
+</main>
 
 <footer>
   <p>© 2025 Wasif Danesh • ABN 14 116 228 753</p>
   <ul class="footer-links">
-    <li><a href="https://linkedin.com/in/wasifdanesh">LinkedIn</a></li>
-    <li><a href="https://github.com/WasifDanesh">GitHub</a></li>
-    <li><a href="https://freelancer.com">Freelancer</a></li>
-    <li><a href="https://fiverr.com">Fiverr</a></li>
-    <li><a href="https://upwork.com">Upwork</a></li>
+    <li><a href="https://linkedin.com/in/wasifdanesh" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/WasifDanesh" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://freelancer.com" target="_blank" rel="noopener">Freelancer</a></li>
+    <li><a href="https://fiverr.com" target="_blank" rel="noopener">Fiverr</a></li>
+    <li><a href="https://upwork.com" target="_blank" rel="noopener">Upwork</a></li>
   </ul>
   <p>Helping people build intelligent, secure, and scalable digital systems.</p>
 </footer>
