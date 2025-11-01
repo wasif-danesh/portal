@@ -1,0 +1,1 @@
+// JS file placeholder (scripts as before)

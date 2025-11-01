@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wasif Danesh — Consulting & Freelancing</title>
+    <meta name="description" content="Consulting & freelancing in AI, Web, Mobile, Cloud, Cybersecurity, IoT, SEO & Analytics — remote-friendly across Australia & beyond."/>
+    <meta name="theme-color" content="#0b1020"/>
+
+    <!-- ✅ SEO Enhancement -->
+    <meta name="keywords" content="AI consulting, Cloud Architect, Freelance Developer, Next.js, React, Flutter, DevOps, Cybersecurity, Australia, Remote consulting" />
+    <link rel="canonical" href="https://www.wasifdanesh.tech/" />
+
+    <!-- ✅ Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wasif Danesh — AI, Web & Cloud Consulting">
+    <meta property="og:description" content="Remote-friendly consulting in AI, Web, Mobile, Cloud, and Cybersecurity across Australia & beyond.">
+    <meta property="og:image" content="https://www.wasifdanesh.tech/og-image.jpg">
+    <meta property="og:url" content="https://www.wasifdanesh.tech/">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wasif Danesh — AI, Web & Cloud Consulting">
+    <meta name="twitter:description" content="Build innovative, secure digital experiences with confidence.">
+    <meta name="twitter:image" content="https://www.wasifdanesh.tech/og-image.jpg">
+
+    <!-- ✅ Structured Data (Google Knowledge Panel) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Wasif Danesh",
+            "jobTitle": "AI & Cloud Consultant",
+            "url": "https://www.wasifdanesh.tech",
+            "image": "https://www.wasifdanesh.tech/og-image.jpg",
+            "sameAs": [
+                "https://www.linkedin.com/",
+                "https://github.com/",
+                "https://www.freelancer.com/"
+            ]
+        }
+    </script>
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { accent: '#5eead4', accent2: '#60a5fa' },
+                    boxShadow: { glass: '0 10px 25px rgba(0,0,0,.25)' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Background & reveal */
+        body{
+            background: radial-gradient(1200px 800px at 80% -10%,rgba(96,165,250,.25),transparent 60%),
+            radial-gradient(1000px 600px at -20% 0%,rgba(94,234,212,.18),transparent 60%),
+            #0b1020;
+            color:#e6ecff;
+        }
+        .glass{backdrop-filter:saturate(1.2) blur(10px)}
+        .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+        .reveal.show{opacity:1;transform:translateY(0)}
+        .link-ghost{position:relative}
+        .link-ghost::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 2px rgba(255,255,255,.08);opacity:0;transition:opacity .2s}
+        .link-ghost:hover::after{opacity:1}
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-300/20 selection:text-cyan-100">
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 glass bg-slate-900/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4">
+        <nav class="h-16 flex items-center justify-between gap-4">
+            <a href="#home" class="flex items-center gap-2 font-extrabold tracking-tight">
+                <span class="grid place-items-center w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accent2 shadow-[0_0_0_2px_rgba(94,234,212,.35)]">WD</span>
+                <span class="sr-only">Go to home</span>
+                <span aria-hidden="true">Wasif Danesh</span>
+            </a>
+            <div class="hidden sm:flex flex-wrap items-center gap-2">
+                <a class="px-2 py-1 rounded-lg text-slate-200/90 hover:bg-white/10" href="#home">Home</a>
+                <a class="px-2 py-1 rounded-lg text-slate-200/90 hover:bg-white/10" href="#about">About</a>
+                <a class="px-2 py-1 rounded-lg text-slate-200/90 hover:bg-white/10" href="#services">Services</a>
+                <a class="px-2 py-1 rounded-lg text-slate-200/90 hover:bg-white/10" href="#expertise">Expertise</a>
+                <a class="px-2 py-1 rounded-lg text-slate-200/90 hover:bg-white/10" href="#portfolio">Work</a>
+                <a class="px-2 py-1 rounded-lg text-slate-200/90 hover:bg-white/10" href="#process">Process</a>
+                <a class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 shadow-glass" href="#contact">Hire Me</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section id="home" class="pt-24 pb-20 relative overflow-hidden">
+        <!-- Futuristic AI Code Collage Hero -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-45 mix-blend-screen"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-900/50 to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+            <div class="reveal space-y-5">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_0_10px_rgba(0,0,0,0.6)]">
+                    Intelligent
+                    <span class="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent">Solutions</span><br>
+                    for Modern Business
+                </h1>
+                <p class="text-indigo-200/95 text-lg md:text-xl max-w-prose drop-shadow-[0_0_8px_rgba(0,0,0,0.6)]">
+                    AI-powered apps • Cloud transformations • Secure and scalable digital services.
+                    Remote-friendly consulting for Australia & beyond.
+                </p>
+                <div class="flex flex-wrap gap-3 mt-4">
+                    <a href="#contact" class="px-5 py-3 rounded-xl bg-accent2/80 hover:bg-accent2 text-slate-900 font-bold shadow-lg shadow-blue-500/20">Book Consultation</a>
+                    <a href="#portfolio" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 shadow-glass link-ghost">View Portfolio</a>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">AI & ML</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Web (React/Next.js)</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Mobile (Flutter)</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Cloud (AWS/GCP/Azure)</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Cybersecurity</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">SEO & Analytics</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">IoT & Automation</span>
+                </div>
+            </div>
+
+            <!-- Highlights Panel -->
+            <div class="reveal grid gap-4">
+                <div class="rounded-2xl border border-white/10 bg-white/10 backdrop-blur shadow-xl p-6">
+                    <h3 class="text-xl font-semibold mb-2">Core Strengths</h3>
+                    <ul class="text-indigo-100/90 space-y-1 text-sm">
+                        <li>🚀 Fast & scalable web and mobile apps</li>
+                        <li>🤖 Practical AI solutions & automations</li>
+                        <li>🔐 Secure systems with strong architecture</li>
+                        <li>⚙️ DevOps for smooth delivery & uptime</li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/10 backdrop-blur shadow-xl p-6">
+                    <h3 class="text-xl font-semibold mb-2">Quick Snapshot</h3>
+                    <div class="grid grid-cols-3 text-center gap-3 text-indigo-100">
+                        <div><span class="text-2xl font-bold">AI</span><div class="text-xs">Solutions</div></div>
+                        <div><span class="text-2xl font-bold">Full-Stack</span><div class="text-xs">Apps</div></div>
+                        <div><span class="text-2xl font-bold">Cloud</span><div class="text-xs">Secure Dev</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-start">
+            <div class="reveal rounded-2xl border border-white/10 bg-white/5 glass p-6 shadow-glass">
+                <h2 class="text-3xl font-bold mb-2">About Wasif</h2>
+                <p>I'm <strong>Wasif Danesh</strong>, a senior software engineer and consultant with <strong>25+ years</strong> building intelligent, secure digital platforms across AI, cloud, and modern applications. I'm currently undertaking a <strong>Master of Computer Science (Monash)</strong>, specialising in <strong>AI and Cybersecurity</strong>.</p>
+                <p class="mt-2">I help founders and teams transform business goals into production-ready systems — with robust architecture, clean UX, automation, and long-term security.</p>
+                <div class="flex flex-wrap gap-2 mt-4 text-sm">
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Client-first</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Outcome-driven</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Security-minded</span>
+                    <span class="px-3 py-1 rounded-full border border-white/15 bg-white/5">Docs & CI/CD</span>
+                </div>
+            </div>
+
+            <div class="reveal grid md:grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <h3 class="font-semibold mb-2">Highlights</h3>
+                    <ul class="list-disc list-inside text-indigo-200/90 space-y-1 text-sm">
+                        <li>AI assistants & automation tools</li>
+                        <li>React/Next.js enterprise apps</li>
+                        <li>Flutter cross-platform delivery</li>
+                        <li>Cloud deployments & monitoring</li>
+                        <li>DevOps (Docker, K8s, GitHub Actions)</li>
+                        <li>Security reviews & hardening</li>
+                        <li>SEO & performance optimisation</li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <h3 class="font-semibold mb-2">Education & Certifications</h3>
+                    <ul class="list-disc list-inside text-indigo-200/90 space-y-1 text-sm">
+                        <li>M.Comp.Sci (Monash), AI & Cybersecurity (in progress)</li>
+                        <li>MBA (Bangladesh)</li>
+                        <li>Preparing: AWS Solutions Architect (SAA)</li>
+                        <li>PRINCE2 / Agile practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="reveal text-3xl font-bold mb-4">Services</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="reveal flex gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-gradient-to-br from-accent/20 to-accent2/20">💻</div>
+                    <div>
+                        <h3 class="font-semibold">Web & Mobile</h3>
+                        <p class="text-indigo-200/90 text-sm">React/Next.js & Flutter. SSR/ISR, PWA, performance budgets.</p>
+                        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Next.js</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">React</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-gradient-to-br from-accent/20 to-accent2/20">🤖</div>
+                    <div>
+                        <h3 class="font-semibold">AI & Data</h3>
+                        <p class="text-indigo-200/90 text-sm">Chatbots, RAG, content tools, analytics dashboards. Ethical & privacy-minded ML.</p>
+                        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Open-source ML</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">RAG</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Dashboards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-gradient-to-br from-accent/20 to-accent2/20">☁️</div>
+                    <div>
+                        <h3 class="font-semibold">Cloud & DevOps</h3>
+                        <p class="text-indigo-200/90 text-sm">AWS/GCP/Azure architectures, CI/CD, containers, Kubernetes, monitoring.</p>
+                        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">AWS</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Docker</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">K8s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-gradient-to-br from-accent/20 to-accent2/20">🛡️</div>
+                    <div>
+                        <h3 class="font-semibold">Cybersecurity</h3>
+                        <p class="text-indigo-200/90 text-sm">Secure by design, security reviews, compliance support, privacy & encryption.</p>
+                        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Threat model</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">OWASP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-gradient-to-br from-accent/20 to-accent2/20">📈</div>
+                    <div>
+                        <h3 class="font-semibold">SEO & Analytics</h3>
+                        <p class="text-indigo-200/90 text-sm">On-page SEO, technical SEO, GA4/GTM setup, rich snippets, performance tuning.</p>
+                        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">GA4</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Core Web Vitals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-gradient-to-br from-accent/20 to-accent2/20">🔌</div>
+                    <div>
+                        <h3 class="font-semibold">IoT & Automation</h3>
+                        <p class="text-indigo-200/90 text-sm">Home-lab & smart devices, edge to cloud pipelines, monitoring & control.</p>
+                        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">Home Assistant</span>
+                            <span class="px-2 py-0.5 rounded-full border border-white/15 bg-indigo-300/10">MQTT</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="reveal text-3xl font-bold mb-4">Expertise</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="reveal rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <h3 class="font-semibold">Languages & Frameworks</h3>
+                    <p class="text-indigo-200/90">Java, Python, JavaScript/TypeScript, Node.js, React, Next.js, Flutter</p>
+                    <h3 class="font-semibold mt-3">AI/ML</h3>
+                    <p class="text-indigo-200/90">Vision & NLP, open-source models, data pipelines, evaluation</p>
+                    <h3 class="font-semibold mt-3">Databases</h3>
+                    <p class="text-indigo-200/90">MongoDB, MySQL, Firestore</p>
+                </div>
+                <div class="reveal rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <h3 class="font-semibold">Cloud & DevOps</h3>
+                    <p class="text-indigo-200/90">AWS/GCP/Azure, Docker, Kubernetes, GitHub Actions, monitoring</p>
+                    <h3 class="font-semibold mt-3">Security</h3>
+                    <p class="text-indigo-200/90">Encryption, authN/Z, OWASP, privacy by design</p>
+                    <h3 class="font-semibold mt-3">Design & Branding</h3>
+                    <p class="text-indigo-200/90">Figma, Photoshop, Illustrator, Canva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / WORK -->
+    <section id="portfolio" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="reveal text-3xl font-bold mb-4">Selected Work</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <!-- Realistic UI -->
+                <article class="reveal rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-glass">
+                    <img class="h-44 w-full object-cover" alt="AI-driven analytics dashboard" src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop"/>
+                    <div class="p-4">
+                        <strong>AI Assistant Dashboard</strong>
+                        <p class="text-indigo-200/90">RAG + analytics widgets, Next.js + serverless functions.</p>
+                        <div class="mt-1 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-indigo-300/40 bg-indigo-300/10">AI</span>
+                            <span class="px-2 py-0.5 rounded-full border border-indigo-300/40 bg-indigo-300/10">Next.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mobile UI -->
+                <article class="reveal rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-glass">
+                    <img class="h-44 w-full object-cover" alt="Mobile product UI previews" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop"/>
+                    <div class="p-4">
+                        <strong>Wellness Mobile App</strong>
+                        <p class="text-indigo-200/90">Flutter app with offline-first sync and charts.</p>
+                        <div class="mt-1 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-indigo-300/40 bg-indigo-300/10">Flutter</span>
+                            <span class="px-2 py-0.5 rounded-full border border-indigo-300/40 bg-indigo-300/10">Mobile</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Abstract AI -->
+                <article class="reveal rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-glass">
+                    <img class="h-44 w-full object-cover" alt="Abstract AI neural mesh" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop"/>
+                    <div class="p-4">
+                        <strong>AI Content Tools</strong>
+                        <p class="text-indigo-200/90">Generation & evaluation pipelines integrated with editorial CMS.</p>
+                        <div class="mt-1 flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-0.5 rounded-full border border-indigo-300/40 bg-indigo-300/10">AI</span>
+                            <span class="px-2 py-0.5 rounded-full border border-indigo-300/40 bg-indigo-300/10">Automation</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="reveal text-3xl font-bold mb-4">Process</h2>
+            <div class="grid md:grid-cols-5 gap-3">
+                <div class="reveal flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-4 shadow-glass">
+                    <div class="grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent2 font-extrabold text-slate-900">1</div>
+                    <div><strong>Discovery</strong><div class="text-indigo-200/90">Goals, constraints, success metrics.</div></div>
+                </div>
+                <div class="reveal flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-4 shadow-glass">
+                    <div class="grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent2 font-extrabold text-slate-900">2</div>
+                    <div><strong>Plan</strong><div class="text-indigo-200/90">Architecture, backlog, timeline.</div></div>
+                </div>
+                <div class="reveal flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-4 shadow-glass">
+                    <div class="grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent2 font-extrabold text-slate-900">3</div>
+                    <div><strong>Build</strong><div class="text-indigo-200/90">Agile iterations & testing.</div></div>
+                </div>
+                <div class="reveal flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-4 shadow-glass">
+                    <div class="grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent2 font-extrabold text-slate-900">4</div>
+                    <div><strong>Launch</strong><div class="text-indigo-200/90">Deploy, monitor, hand-off.</div></div>
+                </div>
+                <div class="reveal flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 glass p-4 shadow-glass">
+                    <div class="grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent2 font-extrabold text-slate-900">5</div>
+                    <div><strong>Support</strong><div class="text-indigo-200/90">Maintenance & optimisation.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-start">
+            <div class="reveal rounded-2xl border border-white/10 bg-white/5 glass p-6 shadow-glass">
+                <h2 class="text-3xl font-bold">Let’s work together</h2>
+                <p class="text-indigo-200/90">Tell me about your project and I’ll reply with the best approach and a practical estimate.</p>
+                <form id="contactForm" class="mt-4 grid gap-3">
+                    <input name="name" placeholder="Your name" class="w-full px-3 py-2 rounded-xl border border-white/15 bg-slate-950/60" required>
+                    <input name="email" type="email" placeholder="Email" class="w-full px-3 py-2 rounded-xl border border-white/15 bg-slate-950/60" required>
+                    <textarea name="message" rows="5" placeholder="Project summary & goals" class="w-full px-3 py-2 rounded-xl border border-white/15 bg-slate-950/60"></textarea>
+                    <button type="submit" class="px-5 py-3 rounded-xl font-bold text-slate-50 bg-slate-800/70 backdrop-blur border border-white/20 hover:bg-slate-700/80 hover:scale-[1.03] shadow-lg shadow-slate-900/50 transition-all">
+                        Send Inquiry
+                    </button>
+                    <p id="formStatus" class="hidden text-sm mt-2 h-5"></p>
+                </form>
+                <script>
+                    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+                        e.preventDefault();
+
+                        const form = e.target;
+                        const status = document.getElementById("formStatus");
+
+                        status.classList.remove("hidden");
+                        status.textContent = "Sending...";
+                        status.className = "text-sm mt-2 text-blue-400 h-5";
+
+                        const data = Object.fromEntries(new FormData(form).entries());
+
+                        try {
+                            const res = await fetch("https://formspree.io/f/mldoezbj", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(data)
+                            });
+
+                            if (res.ok) {
+                                status.textContent = "✅ Message sent successfully!";
+                                status.className = "text-sm mt-2 text-green-400 h-5";
+                                form.reset();
+                            } else {
+                                throw new Error();
+                            }
+                        } catch (error) {
+                            status.textContent = "❌ Something went wrong. Please try again.";
+                            status.className = "text-sm mt-2 text-red-400 h-5";
+                        }
+                    });
+                </script>
+            </div>
+            <div class="reveal grid gap-4">
+                <div class="rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <h3 class="font-semibold">Capabilities (Quick)</h3>
+                    <ul class="list-disc list-inside text-indigo-200/90 space-y-1">
+                        <li>Web (Next.js/React), Mobile (Flutter)</li>
+                        <li>AI tools, chatbots, RAG, analytics</li>
+                        <li>Cloud & DevOps (AWS/GCP/Azure, Docker, K8s)</li>
+                        <li>Cybersecurity reviews & hardening</li>
+                        <li>SEO/GA4 & performance optimisation</li>
+                        <li>IoT pipelines & home-lab integrations</li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 glass p-5 shadow-glass">
+                    <h3 class="font-semibold">Availability</h3>
+                    <p class="text-indigo-200/90">Part-time consulting • Remote/Hybrid • Flexible time zones</p>
+                    <div class="mt-3 space-y-1 text-sm">
+                        <p class="text-indigo-200/90">Email:</p>
+                        <a href="mailto:contact@wasifdanesh.tech"
+                           class="text-accent2 hover:text-accent font-medium underline decoration-dotted">
+                            contact@wasifdanesh.tech
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Back to top -->
+<a id="toTop" href="#home" aria-label="Back to top" class="fixed right-5 bottom-5 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="grid place-items-center w-10 h-10 rounded-lg border border-white/10 bg-white/10">⬆️</div>
+</a>
+
+<!-- Footer -->
+<footer class="py-8 border-t border-white/10 text-indigo-200/90">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
+        <div>© <span id="year"></span> Wasif Danesh • ABN 14 116 228 753</div>
+        <div class="space-x-3">
+            <!-- TODO: Replace with your actual profile URLs -->
+            <a class="underline decoration-dotted" href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a class="underline decoration-dotted" href="https://github.com/" target="_blank" rel="noreferrer noopener" aria-label="GitHub">GitHub</a>
+            <a class="underline decoration-dotted" href="https://www.freelancer.com/" target="_blank" rel="noreferrer noopener" aria-label="Freelancer">Freelancer</a>
+            <a class="underline decoration-dotted" href="https://www.fiverr.com/" target="_blank" rel="noreferrer noopener" aria-label="Fiverr">Fiverr</a>
+            <a class="underline decoration-dotted" href="https://www.upwork.com/" target="_blank" rel="noreferrer noopener" aria-label="Upwork">Upwork</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll',()=>{
+        const y=window.scrollY||document.documentElement.scrollTop;
+        toTop.classList.toggle('opacity-100', y>600);
+        toTop.classList.toggle('pointer-events-auto', y>600);
+    });
+</script>
+</body>
+</html>
