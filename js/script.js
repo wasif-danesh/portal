@@ -4,15 +4,52 @@
 const menuToggle = document.getElementById('menuToggle');
 const mobileDrawer = document.getElementById('mobileDrawer');
 const closeDrawer = document.getElementById('closeDrawer');
+const siteHeader = document.querySelector('.site-header');
+
+function openDrawer() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.add('open');
+    mobileDrawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    menuToggle?.setAttribute('aria-expanded', 'true');
+    menuToggle?.setAttribute('aria-label', 'Close navigation');
+    const firstLink = mobileDrawer.querySelector('a');
+    requestAnimationFrame(() => firstLink?.focus());
+}
+
+function closeDrawerAndRestore({ restoreFocus = true } = {}) {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.remove('open');
+    mobileDrawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation');
+    if (restoreFocus) menuToggle?.focus();
+}
 
 if (menuToggle && mobileDrawer) {
-    menuToggle.addEventListener('click', () => mobileDrawer.classList.add('open'));
+    menuToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.contains('open');
+        if (isOpen) {
+            closeDrawerAndRestore();
+        } else {
+            openDrawer();
+        }
+    });
 }
+
 if (closeDrawer && mobileDrawer) {
-    closeDrawer.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+    closeDrawer.addEventListener('click', () => closeDrawerAndRestore());
 }
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileDrawer?.classList.contains('open')) {
+        closeDrawerAndRestore();
+    }
+});
+
 document.querySelectorAll('.mobile-drawer a').forEach(link =>
-    link.addEventListener('click', () => mobileDrawer?.classList.remove('open'))
+    link.addEventListener('click', () => closeDrawerAndRestore({ restoreFocus: false }))
 );
 
 
@@ -22,8 +59,8 @@ document.querySelectorAll('.mobile-drawer a').forEach(link =>
 ============================ */
 const body = document.body;
 const html = document.documentElement; // 🔹 Added
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle?.querySelector('.material-symbols-rounded');
+const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');
+const themeToggleIcons = Array.from(themeToggleButtons, btn => btn.querySelector('.material-symbols-rounded'));
 
 const systemPrefDark = window.matchMedia('(prefers-color-scheme: dark)');
 const savedTheme = localStorage.getItem('theme');
@@ -36,10 +73,16 @@ systemPrefDark.addEventListener('change', e => {
     }
 });
 
-themeToggle?.addEventListener('click', () => {
-    const next = body.dataset.theme === 'dark' ? 'light' : 'dark';
-    applyTheme(next, { save: true });
-});
+themeToggleButtons.forEach(button =>
+    button.addEventListener('click', () => {
+        const next = body.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(next, { save: true });
+
+        if (mobileDrawer?.classList.contains('open') && mobileDrawer.contains(button)) {
+            closeDrawerAndRestore({ restoreFocus: false });
+        }
+    })
+);
 
 function applyTheme(mode, { save } = { save: false }) {
     body.classList.add('theme-transition');
@@ -48,15 +91,30 @@ function applyTheme(mode, { save } = { save: false }) {
     /* ✅ FIXED — add .light class to <html> for CSS compatibility */
     html.classList.toggle('light', mode === 'light');
 
-    updateThemeIcon();
+    updateThemeControls(mode);
     if (save) localStorage.setItem('theme', mode);
     setTimeout(() => body.classList.remove('theme-transition'), 400);
     recolorIcons();
 }
 
-function updateThemeIcon() {
-    if (!themeIcon) return;
-    themeIcon.textContent = body.dataset.theme === 'dark' ? 'light_mode' : 'dark_mode';
+function updateThemeControls(mode = body.dataset.theme) {
+    if (!themeToggleButtons.length) return;
+
+    const isDark = mode === 'dark';
+    const nextIcon = isDark ? 'light_mode' : 'dark_mode';
+    const labelText = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+    const displayText = isDark ? 'Light theme' : 'Dark theme';
+
+    themeToggleIcons.forEach(icon => {
+        if (icon) icon.textContent = nextIcon;
+    });
+
+    themeToggleButtons.forEach(button => {
+        button.setAttribute('aria-label', labelText);
+        button.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        const label = button.querySelector('.theme-toggle__label');
+        if (label) label.textContent = displayText;
+    });
 }
 
 /* Recolor Material icons after theme switch (defensive) */
@@ -118,9 +176,20 @@ function toggleBackToTop() {
         }, 200);
     }
 }
-window.addEventListener('scroll', toggleBackToTop);
+
+function handleHeaderState() {
+    if (!siteHeader) return;
+    siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+}
+
+function handleScroll() {
+    toggleBackToTop();
+    handleHeaderState();
+}
+
+window.addEventListener('scroll', handleScroll, { passive: true });
 backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-toggleBackToTop();
+handleScroll();
 
 
 /* ============================
