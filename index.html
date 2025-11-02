@@ -69,33 +69,33 @@
 
 <main>
 <section id="home" class="hero container">
-    <div class="hero-content">
+    <div class="hero-content" data-animate="fade-up">
         <p class="hero-tagline">AI • Cloud • Security • Web • Mobile App</p>
         <h1>Intelligent Digital Solutions<br>for Modern Businesses</h1>
         <p class="hero-sub">Designing and deploying scalable, secure, and cloud-ready applications for modern teams and enterprises.</p>
-        <div class="hero-cta">
+        <div class="hero-cta" data-animate="fade-up" data-animate-delay="0.15">
             <a href="#contact" class="btn-primary">Book Consultation</a>
             <a href="#services" class="btn-secondary">Explore Services →</a>
         </div>
     </div>
-    <div class="hero-media">
+    <div class="hero-media" data-animate="fade-left" data-animate-delay="0.25">
         <img src="media/hero-ai.png" alt="AI and Cloud Concept" decoding="async" />
     </div>
 </section>
 
 <section id="about" class="about-section container">
   <h2 class="section-title">About</h2>
-  <div class="about-grid">
-    <div class="about-card"><h3>Meet Wasif Danesh</h3><br/><p>I’m a senior software engineer and consultant with over 25 years of experience delivering secure, scalable, and user-centric digital solutions across web, mobile, and cloud platforms.</p><br><p>Leveraging an advanced foundation in Artificial Intelligence and Cybersecurity to design scalable, intelligent, and resilient systems.</p></div>
-    <div class="about-card"><h3>What I Deliver</h3><br/><ul class="icon-list"><li>AI assistants & automation tools</li><li>Web and mobile applications</li><li>CI/CD & cloud-native architectures</li><li>DevSecOps pipelines & monitoring</li><li>Security reviews & compliance support</li></ul></div>
+  <div class="about-grid" data-animate-group>
+    <div class="about-card" data-animate="fade-up"><h3>Meet Wasif Danesh</h3><br/><p>I’m a senior software engineer and consultant with over 25 years of experience delivering secure, scalable, and user-centric digital solutions across web, mobile, and cloud platforms.</p><br><p>Leveraging an advanced foundation in Artificial Intelligence and Cybersecurity to design scalable, intelligent, and resilient systems.</p></div>
+    <div class="about-card" data-animate="fade-up"><h3>What I Deliver</h3><br/><ul class="icon-list"><li>AI assistants & automation tools</li><li>Web and mobile applications</li><li>CI/CD & cloud-native architectures</li><li>DevSecOps pipelines & monitoring</li><li>Security reviews & compliance support</li></ul></div>
   </div>
 </section>
 
 <section id="services" class="services-section container">
     <h2 class="section-title">Services</h2>
-    <div class="services-grid">
+    <div class="services-grid" data-animate-group>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">devices</span></div>
                 <h3>Web & Mobile Development</h3>
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">design_services</span></div>
                 <h3>Modern Website Design</h3>
@@ -117,7 +117,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">query_stats</span></div>
                 <h3>SEO & Analytics</h3>
@@ -128,7 +128,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">sync_saved_locally</span></div>
                 <h3>CI/CD Pipeline</h3>
@@ -139,7 +139,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">cloud</span></div>
                 <h3>Cloud Solutions</h3>
@@ -150,7 +150,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">dns</span></div>
                 <h3>Virtualization</h3>
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">monitor_heart</span></div>
                 <h3>Monitoring & Support</h3>
@@ -172,7 +172,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">shield_person</span></div>
                 <h3>Cybersecurity & Compliance</h3>
@@ -180,17 +180,6 @@
             <p>Penetration testing, risk assessment, and secure-by-design reviews.</p>
             <div class="service-tags">
                 <span>Pen Testing</span><span>Security Audit</span><span>Compliance</span>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-header">
-                <div class="service-icon"><span class="material-symbols-rounded">build_circle</span></div>
-                <h3>PC Troubleshooting</h3>
-            </div>
-            <p>Expert diagnosis and repair of PC hardware and software issues.</p>
-            <div class="service-tags">
-                <span>Hardware</span><span>Software</span><span>Diagnostics</span>
             </div>
         </div>
 
@@ -203,10 +192,11 @@
 <section id="portfolio" class="portfolio-section container">
     <h2 class="section-title">Portfolio</h2>
 
-    <div class="portfolio-grid">
+    <div class="portfolio-grid" data-animate-group>
 
         <!-- CARD 1 -->
         <div class="portfolio-card"
+             data-animate="scale"
              data-title="AI Dashboard"
              data-description="Next.js dashboard integrating AI assistants and real-time analytics widgets."
              data-image="media/hero-ai.png">
@@ -217,6 +207,7 @@
 
         <!-- CARD 2 -->
         <div class="portfolio-card"
+             data-animate="scale"
              data-title="Mobile Wellness App"
              data-description="Flutter app with offline-first sync, charts, and personalized recommendations."
              data-image="media/hero-ai.png">
@@ -227,6 +218,7 @@
 
         <!-- CARD 3 -->
         <div class="portfolio-card"
+             data-animate="scale"
              data-title="Cloud Automation Portal"
              data-description="Automation dashboard for hybrid cloud deployments with Kubernetes & Docker."
              data-image="media/hero-ai.png">
@@ -253,9 +245,9 @@
 
 <section id="expertise" class="expertise-section container">
     <h2 class="section-title">Expertise</h2>
-    <div class="expertise-grid">
+    <div class="expertise-grid" data-animate-group>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">code</span></div>
                 <h3>Languages & Frameworks</h3>
@@ -267,7 +259,7 @@
             </div>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">neurology</span></div>
                 <h3>AI / Machine Learning</h3>
@@ -278,7 +270,7 @@
             </div>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">dns</span></div>
                 <h3>Databases</h3>
@@ -289,7 +281,7 @@
             </div>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">cloud_sync</span></div>
                 <h3>Cloud & DevOps</h3>
@@ -300,7 +292,7 @@
             </div>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">shield_person</span></div>
                 <h3>Cybersecurity</h3>
@@ -311,7 +303,7 @@
             </div>
         </div>
 
-        <div class="card expertise-card">
+        <div class="card expertise-card" data-animate="fade-up">
             <div class="service-header">
                 <div class="service-icon"><span class="material-symbols-rounded">brush</span></div>
                 <h3>Design & Branding</h3>
@@ -328,62 +320,47 @@
 
 <section id="process" class="process-section container">
     <h2 class="section-title">Process</h2>
-    <p class="section-intro">
+    <p class="section-intro" data-animate="fade-up" data-animate-delay="0.05">
         Every project follows a structured, collaborative, and iterative process — from discovery to long-term support.
     </p>
     <br/>
-    <div class="process-grid">
+    <div class="process-grid" data-animate-group>
 
-        <div class="process-step">
+        <div class="process-step" data-animate="fade-up">
             <div class="step-header">
-                <div class="step-icon">
-                    <span class="material-symbols-rounded">search</span>
-                    <span class="step-number">1</span>
-                </div>
+                <span class="step-badge"><span class="step-number">1</span></span>
                 <h3>Discovery</h3>
             </div>
             <p>Understanding business goals, technical scope, and user needs.</p>
         </div>
 
-        <div class="process-step">
+        <div class="process-step" data-animate="fade-up">
             <div class="step-header">
-                <div class="step-icon">
-                    <span class="material-symbols-rounded">architecture</span>
-                    <span class="step-number">2</span>
-                </div>
+                <span class="step-badge"><span class="step-number">2</span></span>
                 <h3>Plan</h3>
             </div>
             <p>Defining architecture, timeline, and success metrics before build.</p>
         </div>
 
-        <div class="process-step">
+        <div class="process-step" data-animate="fade-up">
             <div class="step-header">
-                <div class="step-icon">
-                    <span class="material-symbols-rounded">rocket_launch</span>
-                    <span class="step-number">3</span>
-                </div>
+                <span class="step-badge"><span class="step-number">3</span></span>
                 <h3>Build</h3>
             </div>
             <p>Developing iteratively with testing, feedback, and DevSecOps integration.</p>
         </div>
 
-        <div class="process-step">
+        <div class="process-step" data-animate="fade-up">
             <div class="step-header">
-                <div class="step-icon">
-                    <span class="material-symbols-rounded">auto_awesome</span>
-                    <span class="step-number">4</span>
-                </div>
+                <span class="step-badge"><span class="step-number">4</span></span>
                 <h3>Launch</h3>
             </div>
             <p>Deploying, optimizing performance, and ensuring a smooth rollout.</p>
         </div>
 
-        <div class="process-step">
+        <div class="process-step" data-animate="fade-up">
             <div class="step-header">
-                <div class="step-icon">
-                    <span class="material-symbols-rounded">handshake</span>
-                    <span class="step-number">5</span>
-                </div>
+                <span class="step-badge"><span class="step-number">5</span></span>
                 <h3>Support</h3>
             </div>
             <p>Ongoing support, monitoring, and feature enhancements.</p>
@@ -395,10 +372,10 @@
 
 <section id="contact" class="contact-section container">
     <h2 class="section-title">Let's Work Together</h2>
-    <div class="contact-grid">
+    <div class="contact-grid" data-animate-group>
 
         <!-- Left: Contact Form -->
-        <div class="contact-card">
+        <div class="contact-card" data-animate="fade-up">
             <h3>Tell me about your project — I’ll recommend the best approach and a practical estimate.</h3>
             <form id="contactForm">
                 <div class="form-group">
@@ -416,7 +393,7 @@
         </div>
 
         <!-- Right: Quick Info -->
-        <div class="contact-card info-card">
+        <div class="contact-card info-card" data-animate="fade-up">
             <h3>Quick Info</h3>
             <p class="quick-info">
                 I apply rapid application development principles powered by AI — combining automation, reusable architectures, and secure DevSecOps pipelines to deliver intelligent apps in weeks, not months.

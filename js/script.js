@@ -138,9 +138,59 @@ const fadeObserver = new IntersectionObserver(
     { threshold: 0.2 }
 );
 
-document
-    .querySelectorAll('section, .service-card, .expertise-card, .process-step, .contact-card, .about-card')
-    .forEach(el => fadeObserver.observe(el));
+document.querySelectorAll('section').forEach(el => fadeObserver.observe(el));
+
+/* ============================
+   MODERN SCROLL REVEAL
+============================ */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const animatedElements = Array.from(document.querySelectorAll('[data-animate]'));
+
+if (animatedElements.length) {
+    document.querySelectorAll('[data-animate-group]').forEach(group => {
+        const scopedItems = group.querySelectorAll('[data-animate]');
+        scopedItems.forEach((item, index) => {
+            if (!item.dataset.animateDelay) {
+                item.style.setProperty('--scroll-delay', `${(index * 0.12).toFixed(2)}s`);
+            }
+        });
+    });
+
+    animatedElements.forEach(el => {
+        const delay = el.dataset.animateDelay;
+        if (delay) {
+            const parsedDelay = Number.parseFloat(delay);
+            if (!Number.isNaN(parsedDelay)) {
+                el.style.setProperty('--scroll-delay', `${parsedDelay}s`);
+            }
+        }
+    });
+
+    if (prefersReducedMotion.matches) {
+        animatedElements.forEach(el => el.classList.add('is-inview'));
+    } else {
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-inview');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.15, rootMargin: '0px 0px -10%' }
+        );
+
+        animatedElements.forEach(el => revealObserver.observe(el));
+
+        prefersReducedMotion.addEventListener('change', event => {
+            if (event.matches) {
+                revealObserver.disconnect();
+                animatedElements.forEach(el => el.classList.add('is-inview'));
+            }
+        });
+    }
+}
 
 
 /* ============================
