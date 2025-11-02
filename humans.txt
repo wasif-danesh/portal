@@ -5,10 +5,10 @@ Contact: wasif.danesh@gmail.com
 
 /* TECHNOLOGY */
 Languages: HTML, CSS, JavaScript
-Frameworks: [None]
+Frameworks: [Material Design 3]
 
 /* SITE INFO */
-Last Update: 2024/12/31
+Last Update: 2025/11/02
 License: MIT
 
 /* COMMENT */
