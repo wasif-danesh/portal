@@ -1,2 +1,2 @@
 # portal
-My profile, blogs, articles, researches and web and mobile applications
+My profile, blogs, articles, researches and web, desktop, and mobile applications
