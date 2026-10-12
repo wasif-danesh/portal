@@ -1,0 +1,18 @@
+# Render Blueprint — New > Blueprint, point at this repo.
+services:
+  - type: web
+    name: wasifyai-portal
+    runtime: docker
+    region: singapore
+    plan: starter
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://wasifyai.com
+      - key: NEXT_PUBLIC_CONTACT_EMAIL
+        sync: false
+      - key: NEXT_PUBLIC_GTM_ID
+        sync: false
+      - key: FORMSPREE_ID
+        sync: false

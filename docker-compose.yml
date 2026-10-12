@@ -1,0 +1,15 @@
+# Proxmox home-lab / any Docker host:  docker compose up -d --build
+services:
+  portal:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://wasifyai.com}
+        NEXT_PUBLIC_CONTACT_EMAIL: ${NEXT_PUBLIC_CONTACT_EMAIL:-}
+        NEXT_PUBLIC_GTM_ID: ${NEXT_PUBLIC_GTM_ID:-}
+    image: wasifyai-portal:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      FORMSPREE_ID: ${FORMSPREE_ID:-}
