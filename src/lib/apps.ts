@@ -8,6 +8,8 @@ export interface AppEntry {
   status: AppStatus;
   icon: "voice" | "vision" | "platform";
   href?: string;
+  /** Public GitHub repository, shown as an icon link on the card */
+  repo?: string;
   tags: string[];
   featured?: boolean;
 }
@@ -30,6 +32,7 @@ export const apps: AppEntry[] = [
     status: "in-development",
     icon: "voice",
     // href: "https://audio.wasifyai.com", // enable when the app is live
+    repo: "https://github.com/wasif-danesh/wasifyai",
     tags: ["Text-to-speech", "Voice cloning", "Streaming"],
     featured: true,
   },
@@ -42,6 +45,7 @@ export const apps: AppEntry[] = [
     status: "in-development",
     icon: "vision",
     // href: "https://image.wasifyai.com", // enable when the app is live
+    repo: "https://github.com/wasif-danesh/wasifyai-art",
     tags: ["Diffusion", "LoRA", "Canvas"],
     featured: true,
   },

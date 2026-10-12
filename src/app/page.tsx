@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AppCard } from "@/components/AppCard";
+import { DeploymentModels } from "@/components/DeploymentModels";
 import { PostRow } from "@/components/PostRow";
 import { Section } from "@/components/Section";
 import { apps } from "@/lib/apps";
@@ -69,6 +70,9 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
+      {/* Deployment models */}
+      <DeploymentModels />
 
       {/* Writing */}
       {posts.length > 0 && (
