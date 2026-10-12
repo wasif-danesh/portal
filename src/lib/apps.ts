@@ -29,7 +29,7 @@ export const apps: AppEntry[] = [
       "Expressive multilingual speech generation, rapid voice cloning and multi-speaker dialogue, built as a studio for creators.",
     status: "in-development",
     icon: "voice",
-    href: "https://audio.wasifyai.com",
+    // href: "https://audio.wasifyai.com", // enable when the app is live
     tags: ["Text-to-speech", "Voice cloning", "Streaming"],
     featured: true,
   },
@@ -41,7 +41,7 @@ export const apps: AppEntry[] = [
       "A diffusion playground with model and LoRA hosting and a prompt canvas for creators and design studios.",
     status: "in-development",
     icon: "vision",
-    href: "https://image.wasifyai.com",
+    // href: "https://image.wasifyai.com", // enable when the app is live
     tags: ["Diffusion", "LoRA", "Canvas"],
     featured: true,
   },

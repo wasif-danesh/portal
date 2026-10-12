@@ -24,11 +24,6 @@ export function Footer() {
         <nav aria-label="Footer">
           <h2 className="eyebrow">Explore</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
-            <li>
-              <Link href="/" className={linkClass}>
-                Home
-              </Link>
-            </li>
             {site.nav.map((n) => (
               <li key={n.href}>
                 <Link href={n.href} className={linkClass}>

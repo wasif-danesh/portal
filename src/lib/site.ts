@@ -15,6 +15,7 @@ export const site = {
     { label: "Medium", href: "https://medium.com/@wasif.danesh_63400" },
   ],
   nav: [
+    { label: "Home", href: "/" },
     { label: "Apps", href: "/apps" },
     { label: "Writing", href: "/writing" },
     { label: "About", href: "/about" },
