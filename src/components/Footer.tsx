@@ -85,7 +85,7 @@ export function Footer() {
       <div className="border-border border-t">
         <div className="container-page text-muted flex flex-col gap-2 py-5 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Wasif Danesh. All rights reserved.</p>
-          <p>ABN 14 116 228 753 · Operating as {site.brand}</p>
+          <p>ABN 14 116 228 753</p>
         </div>
       </div>
     </footer>
