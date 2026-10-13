@@ -41,11 +41,11 @@ export default function AboutPage() {
           </div>
         </div>
         <Image
-          src="/images/wasif-danesh.jpg"
+          src="/images/wasif-danesh-portrait.jpg"
           alt="Portrait of Wasif Danesh"
-          width={256}
-          height={256}
-          className="size-48 rounded-2xl object-cover md:size-64"
+          width={560}
+          height={720}
+          className="aspect-[7/9] w-44 rounded-2xl object-cover md:w-64"
         />
       </div>
 

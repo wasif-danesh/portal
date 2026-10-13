@@ -89,11 +89,11 @@ export default function Home() {
       <section className="container-page mt-20">
         <div className="rounded-card border-border bg-surface grid items-center gap-8 border p-6 sm:grid-cols-[auto_1fr] sm:p-10">
           <Image
-            src="/images/wasif-danesh.jpg"
+            src="/images/wasif-danesh-portrait.jpg"
             alt="Portrait of Wasif Danesh"
-            width={160}
-            height={160}
-            className="size-28 rounded-2xl object-cover sm:size-40"
+            width={560}
+            height={720}
+            className="aspect-[7/9] w-28 rounded-2xl object-cover sm:w-36"
           />
           <div>
             <p className="eyebrow">About</p>
