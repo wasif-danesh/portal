@@ -21,72 +21,59 @@ export function Header() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="border-border bg-background/80 sticky top-0 z-40 border-b backdrop-blur-lg">
+    <header className="nav">
       <a
         href="#main"
-        className="focus:bg-accent sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-4 focus:rounded-md focus:px-3 focus:py-1.5 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-4 focus:z-50 focus:rounded-md focus:bg-[var(--accent)] focus:px-3 focus:py-1.5 focus:text-[var(--on-accent)]"
       >
         Skip to content
       </a>
-      <div className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 font-semibold tracking-tight">
+      <div className="wrap nav-in">
+        <Link href="/" className="brand">
           <Logo />
-          <span>{site.name}</span>
+          {site.name}
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+        <nav className="links" aria-label="Primary">
           {site.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
-              className={`rounded-full px-3.5 py-1.5 text-sm transition ${
-                isActive(item.href)
-                  ? "bg-surface-2 text-foreground"
-                  : "text-muted hover:text-foreground"
-              }`}
             >
               {item.label}
             </Link>
           ))}
-          <span className="ml-2">
-            <ThemeToggle />
-          </span>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="nav-r">
           <ThemeToggle />
+          <Link href="/get" className="btn btn-p sm">
+            Get early access
+          </Link>
           <button
             type="button"
+            className="burger"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
-            className="border-border inline-flex size-9 items-center justify-center rounded-full border"
           >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
+            {open ? <X className="ic sm" /> : <Menu className="ic sm" />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <nav
-          id="mobile-nav"
-          aria-label="Mobile"
-          className="container-page border-border flex flex-col gap-1 border-t py-3 md:hidden"
-        >
-          {site.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="text-muted hover:bg-surface-2 hover:text-foreground rounded-lg px-3 py-2.5 text-base"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      )}
+      <nav id="mobile-nav" aria-label="Mobile" className={`mobile ${open ? "open" : ""}`}>
+        {site.nav.map((item) => (
+          <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            {item.label}
+          </Link>
+        ))}
+        <Link href="/get" onClick={() => setOpen(false)}>
+          Get early access
+        </Link>
+      </nav>
     </header>
   );
 }

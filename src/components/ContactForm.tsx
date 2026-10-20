@@ -17,7 +17,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+        body: JSON.stringify({ kind: "contact", ...body }),
       });
       if (!res.ok) throw new Error((await res.json()).error ?? "Something went wrong");
       form.reset();
@@ -28,51 +28,20 @@ export function ContactForm() {
     }
   }
 
-  const field =
-    "mt-1.5 w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-sm outline-none transition focus:border-accent";
-
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="text-sm font-medium">
-          Name
-        </label>
-        <input
-          id="name"
-          name="name"
-          required
-          maxLength={100}
-          autoComplete="name"
-          className={field}
-        />
-      </div>
-      <div>
-        <label htmlFor="email" className="text-sm font-medium">
-          Email
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          maxLength={200}
-          autoComplete="email"
-          className={field}
-        />
-      </div>
-      <div>
-        <label htmlFor="message" className="text-sm font-medium">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          maxLength={4000}
-          className={field}
-        />
-      </div>
+    <form onSubmit={onSubmit} className="stack-f">
+      <label>
+        Name
+        <input name="name" required maxLength={100} autoComplete="name" />
+      </label>
+      <label>
+        Email
+        <input name="email" type="email" required maxLength={200} autoComplete="email" />
+      </label>
+      <label>
+        Message
+        <textarea name="message" required rows={5} maxLength={4000} />
+      </label>
       {/* honeypot: real users never see or fill this */}
       <input
         name="website"
@@ -81,18 +50,14 @@ export function ContactForm() {
         className="hidden"
         aria-hidden="true"
       />
-      <button
-        type="submit"
-        disabled={state === "sending"}
-        className="bg-foreground text-background rounded-full px-5 py-2.5 text-sm font-medium transition hover:opacity-90 disabled:opacity-60"
-      >
+      <button type="submit" disabled={state === "sending"} className="btn btn-p">
         {state === "sending" ? "Sending…" : "Send message"}
       </button>
-      <p role="status" aria-live="polite" className="text-sm">
+      <p role="status" aria-live="polite" className="small">
         {state === "sent" && (
-          <span className="text-emerald-500">Thanks — I&apos;ll reply soon.</span>
+          <span style={{ color: "var(--ok)" }}>Thanks, I&apos;ll reply soon.</span>
         )}
-        {state === "error" && <span className="text-red-500">{error}</span>}
+        {state === "error" && <span style={{ color: "#f7857d" }}>{error}</span>}
       </p>
     </form>
   );

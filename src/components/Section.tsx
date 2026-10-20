@@ -1,36 +1,49 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
 export function Section({
-  eyebrow,
+  kicker,
   title,
-  href,
-  hrefLabel,
+  lead,
   children,
+  alt = false,
+  id,
 }: {
-  eyebrow: string;
-  title: string;
-  href?: string;
-  hrefLabel?: string;
-  children: React.ReactNode;
+  kicker: string;
+  title: React.ReactNode;
+  lead?: React.ReactNode;
+  children?: React.ReactNode;
+  alt?: boolean;
+  id?: string;
 }) {
   return (
-    <section className="container-page mt-20">
-      <div className="mb-8 flex items-end justify-between gap-4">
-        <div>
-          <p className="eyebrow">{eyebrow}</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+    <section className={`sec ${alt ? "alt" : ""}`} id={id}>
+      <div className="wrap">
+        <div className="sec-h">
+          <p className="eyebrow">{kicker}</p>
+          <h2>{title}</h2>
+          {lead && <p className="lead">{lead}</p>}
         </div>
-        {href && (
-          <Link
-            href={href}
-            className="text-muted hover:text-foreground hidden items-center gap-1.5 text-sm transition sm:inline-flex"
-          >
-            {hrefLabel ?? "View all"} <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
-        )}
+        {children}
       </div>
-      {children}
+    </section>
+  );
+}
+
+export function PageHead({
+  kicker,
+  title,
+  lead,
+}: {
+  kicker: string;
+  title: React.ReactNode;
+  lead?: React.ReactNode;
+}) {
+  return (
+    <section className="phead">
+      <div className="glow sm" aria-hidden="true" />
+      <div className="wrap">
+        <p className="eyebrow">{kicker}</p>
+        <h1>{title}</h1>
+        {lead && <p className="lead">{lead}</p>}
+      </div>
     </section>
   );
 }

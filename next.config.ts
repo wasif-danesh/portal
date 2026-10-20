@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   agentRules: false,
+  async redirects() {
+    // The old portfolio "Apps" page is now the Wasify AI product suite.
+    return [{ source: "/apps", destination: "/products", permanent: true }];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

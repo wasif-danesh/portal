@@ -44,12 +44,12 @@ export default async function PostPage({ params }: Props) {
     description: post.description,
     datePublished: post.date.toISOString(),
     dateModified: (post.updated ?? post.date).toISOString(),
-    author: { "@type": "Person", name: site.name, url: site.url },
+    author: { "@type": "Person", name: site.author, url: site.url },
     mainEntityOfPage: `${site.url}/writing/${post.slug}`,
   };
 
   return (
-    <article className="container-page pt-12 sm:pt-20">
+    <article className="wrap pt-12 sm:pt-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
