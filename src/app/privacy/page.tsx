@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Cloud, Cpu, Layers, Scale, Server, ShieldCheck, Check } from "lucide-react";
 import { CtaBand } from "@/components/CtaBand";
 import { TileIcon } from "@/components/icons";
@@ -87,7 +88,16 @@ export default function PrivacyPage() {
       <Section
         kicker="How it's built"
         title="A simple stack, in layers"
-        lead="The architecture is still in draft, so the diagram shows the design rather than a finished system."
+        lead={
+          <>
+            The architecture is still in draft, so this shows the design rather than a finished
+            system.{" "}
+            <Link href="/architecture" className="link">
+              See the full architecture
+            </Link>
+            .
+          </>
+        }
         alt
       >
         <div className="stack">
