@@ -38,9 +38,6 @@ export function Footer() {
               <Link href="/work-with-me">Work with me</Link>
             </li>
             <li>
-              <Link href="/architecture">Architecture</Link>
-            </li>
-            <li>
               <Link href="/get">Early access</Link>
             </li>
           </ul>

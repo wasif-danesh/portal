@@ -19,6 +19,7 @@ export const site = {
     { label: "Products", href: "/products" },
     { label: "Watch", href: "/watch" },
     { label: "Privacy", href: "/privacy" },
+    { label: "Architecture", href: "/architecture" },
     { label: "Roadmap", href: "/roadmap" },
     { label: "Writing", href: "/writing" },
     { label: "About", href: "/about" },
