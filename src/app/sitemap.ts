@@ -4,11 +4,14 @@ import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Pages are static, so the build date is when they last changed.
+  const builtAt = new Date();
   const pages = [
     "",
     "/products",
     "/watch",
     "/privacy",
+    "/architecture",
     "/roadmap",
     "/get",
     "/writing",
@@ -16,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work-with-me",
   ].map((p) => ({
     url: `${site.url}${p}`,
+    lastModified: builtAt,
     changeFrequency: "monthly" as const,
     priority: p === "" ? 1 : 0.7,
   }));
@@ -26,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   const productPages = products.map((p) => ({
     url: `${site.url}/products/${p.slug}`,
+    lastModified: builtAt,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
