@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers static assets: serves the files that `npm run build:static` puts in out/
+  "name": "wasifyai",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+  },
+}

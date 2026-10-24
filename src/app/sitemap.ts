@@ -3,6 +3,8 @@ import { getAllPosts } from "@/lib/posts";
 import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   // Pages are static, so the build date is when they last changed.
   const builtAt = new Date();

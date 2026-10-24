@@ -33,6 +33,24 @@ public/           favicons; images/product (app screenshots); media (the intro f
 - **Design tokens:** the product's blue template, in `src/app/globals.css` (dark by default, light via the toggle).
 - **Nav / socials / email:** `src/lib/site.ts`.
 
+## Static hosting (Cloudflare)
+
+The same site can ship as plain files, with no server. Docker and Render keep working as before.
+
+```bash
+NEXT_PUBLIC_FORMSPREE_ID=<your Formspree id> npm run build:static   # writes out/
+npm run preview:static                                              # http://localhost:4000
+```
+
+- The build sets `STATIC_EXPORT=1` (see `next.config.ts`). Server-only routes (`route.api.ts`) are left out.
+- Forms post from the browser straight to Formspree. Without `NEXT_PUBLIC_FORMSPREE_ID` they post to `/api/contact`, which only exists in server mode.
+- `/apps` redirects and security headers are written to `out/_redirects` and `out/_headers` by `scripts/static-extras.mjs`.
+- Images are served as they are (no image server). `wrangler.jsonc` points Cloudflare at `out/`.
+
+**Cloudflare setup:** Workers & Pages, create, import the GitHub repo. Build command `npm run build:static`,
+deploy command `npx wrangler deploy`. Add `NEXT_PUBLIC_FORMSPREE_ID` (and `NEXT_PUBLIC_CONTACT_EMAIL`,
+`NEXT_PUBLIC_GTM_ID` if used) under build variables, then add `wasifyai.com` as a custom domain.
+
 ## Deploy
 
 **Render:** New → Blueprint → select this repo (`render.yaml`). Set env vars in the dashboard.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitForm } from "@/lib/forms";
 
 type State = "idle" | "sending" | "sent" | "error";
 
@@ -14,12 +15,13 @@ export function ContactForm() {
     const form = e.currentTarget;
     const body = Object.fromEntries(new FormData(form));
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ kind: "contact", ...body }),
+      await submitForm({
+        kind: "contact",
+        name: String(body.name ?? ""),
+        email: String(body.email ?? ""),
+        message: String(body.message ?? ""),
+        website: String(body.website ?? ""),
       });
-      if (!res.ok) throw new Error((await res.json()).error ?? "Something went wrong");
       form.reset();
       setState("sent");
     } catch (err) {

@@ -1,18 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { submitForm } from "@/lib/forms";
 
 type State = "idle" | "sending" | "sent" | "error";
-
-async function submit(payload: Record<string, unknown>) {
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok)
-    throw new Error((await res.json().catch(() => ({}))).error ?? "Something went wrong");
-}
 
 /** One-line email signup used in the call-to-action band. */
 export function WaitlistInline() {
@@ -24,7 +15,11 @@ export function WaitlistInline() {
     setState("sending");
     const data = Object.fromEntries(new FormData(e.currentTarget));
     try {
-      await submit({ kind: "waitlist", email: data.email, website: data.website });
+      await submitForm({
+        kind: "waitlist",
+        email: String(data.email ?? ""),
+        website: String(data.website ?? ""),
+      });
       setState("sent");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
@@ -73,13 +68,13 @@ export function WaitlistFull() {
     const form = e.currentTarget;
     const d = new FormData(form);
     try {
-      await submit({
+      await submitForm({
         kind: "waitlist",
-        name: d.get("name"),
-        email: d.get("email"),
-        message: d.get("message"),
+        name: String(d.get("name") ?? ""),
+        email: String(d.get("email") ?? ""),
+        message: String(d.get("message") ?? ""),
         team: d.get("team") === "on",
-        website: d.get("website"),
+        website: String(d.get("website") ?? ""),
       });
       form.reset();
       setState("sent");
